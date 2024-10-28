@@ -12,7 +12,7 @@
       padding: 0;
       text-align: center;
     }
-    
+  }
     .banner {
       background-color: #ffeb3b;
       color: #333;
