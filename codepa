@@ -286,13 +286,6 @@
 
     document.addEventListener('DOMContentLoaded', () => showContent('trang-chu'));
   </script>
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const firstElement = document.body.firstChild;
-    if (firstElement && firstElement.nodeType === Node.ELEMENT_NODE && firstElement.tagName === "H1") {
-      firstElement.style.display = "none";
-    }
-  });
-</script>
+
 </body>
 </html>
