@@ -21,7 +21,7 @@
       font-size: 24px;
       text-transform: uppercase;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-      width: 100vw; /* Để kéo dài phần màu vàng ra toàn bộ màn hình */
+      width: 100%; /* Để kéo dài phần màu vàng ra toàn bộ màn hình */
       margin: 0; /* Xóa khoảng trống bên ngoài */
     }
 
@@ -31,7 +31,7 @@
       background-color: #1a73e8;
       padding: 15px;
       gap: 20px;
-      width: 100vw; /* Để kéo dài phần màu vàng ra toàn bộ màn hình */
+      width: 100%; /* Để kéo dài phần màu vàng ra toàn bộ màn hình */
       margin: 0; /* Xóa khoảng trống bên ngoài */
     }
     .navbar a {
