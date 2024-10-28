@@ -12,7 +12,9 @@
       padding: 0;
       text-align: center;
     }
-
+    h1:first-of-type {
+    display: none;
+    }
     .banner {
       background-color: #ffeb3b;
       color: #333;
