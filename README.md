@@ -1,16 +1,10 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  h1:first-of-type {
-  display: none;
-}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pathway Academy - Cơ Sở Đông Hưng Thuận 02</title>
   <style>
-    /* CSS để ẩn tên repository */
-    body > *:first-child {
-      display: none;
-    }
-    body {
+      body {
       font-family: Arial, sans-serif;
       background-color: #f0f4f8;
       margin: 0;
@@ -126,9 +120,7 @@
   </style>
 </head>
 <body>
-  body > *:first-child {
-  display: none;
-}
+  
   <div class="banner">
     PATHWAY ACADEMY - CƠ SỞ ĐÔNG HƯNG THUẬN 02
   </div>
