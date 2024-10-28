@@ -1,7 +1,9 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  
+  h1:first-of-type {
+  display: none;
+}
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -119,7 +121,9 @@
   </style>
 </head>
 <body>
-
+  body > *:first-child {
+  display: none;
+}
   <div class="banner">
     PATHWAY ACADEMY - CƠ SỞ ĐÔNG HƯNG THUẬN 02
   </div>
