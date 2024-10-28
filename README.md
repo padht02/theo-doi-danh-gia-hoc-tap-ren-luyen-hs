@@ -4,7 +4,12 @@
   h1:first-of-type {
   display: none;
 }
+  <title>Pathway Academy - Cơ Sở Đông Hưng Thuận 02</title>
   <style>
+    /* CSS để ẩn tên repository */
+    body > *:first-child {
+      display: none;
+    }
     body {
       font-family: Arial, sans-serif;
       background-color: #f0f4f8;
