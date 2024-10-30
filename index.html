@@ -66,6 +66,11 @@
       max-width: 80%;
       margin: 0 auto;
     }
+    /* Nút mặc định là ẩn để chỉ hiển thị khi tìm kiếm */
+    #mon-hoc-buttons a,
+    #lop-buttons a {
+      display: none;
+    }
     .button-container a {
       padding: 10px 15px;
       background-color: #ffeb3b;
@@ -78,7 +83,10 @@
       transition: background-color 0.3s, transform 0.3s;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       text-align: center;
-      display: none;
+      
+    }
+    #ban-giam-hieu .button-container a {
+      display: inline-block;
     }
     .button-container a:hover {
       background-color: #ffd600;
@@ -201,7 +209,15 @@
       <a href="https://docs.google.com/spreadsheets/d/1zpDgivZznDy4c2qhBLXMOHzamHZRt1R4FeI0wGOFQV8/edit?usp=drive_link" target="_blank">9PA1</a>
     </div>
   </div>
-
+  <!-- Nội dung Ban Giám Hiệu -->
+  <div id="ban-giam-hieu" class="content">
+    <h2>Ban Giám Hiệu</h2>
+    <div class="button-container">
+      <a href="https://link-to-danh-sach-giao-vien" target="_blank">01 DANH SÁCH GIÁO VIÊN</a>
+      <a href="https://link-to-danh-sach-hoc-sinh" target="_blank">02 DANH SÁCH HỌC SINH</a>
+      <a href="https://link-to-ban-giam-hieu" target="_blank">03 BAN GIÁM HIỆU</a>
+    </div>
+  </div>
   <script>
     const data = {
       "mon-hoc": [
