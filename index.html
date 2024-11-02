@@ -156,7 +156,8 @@
     <p>Chào mừng bạn đến với trang theo dõi và đánh giá học sinh cơ sở ĐHT02</p>
     <p>LỊCH HOẠT ĐỘNG THÁNG</p>
     <p id="tkb-date" style="font-style: italic;"></p> <!-- Phần tử chứa nội dung từ ô B2 -->
-    <img src="https://pathwayacademy.edu.vn/wp-content/uploads/2023/07/pathway-academy-co-so-vat-chat-slide-02.jpg" alt="Hình ảnh trường học">
+    <img id="dynamic-image-2" alt="Hình ảnh trang chủ" style="display: block; margin-top: 20px; max-width: 100%;">
+<!--     <img src="https://pathwayacademy.edu.vn/wp-content/uploads/2023/07/pathway-academy-co-so-vat-chat-slide-02.jpg" alt="Hình ảnh trường học"> -->
   </div>
 
   <div id="thoi-khoa-bieu" class="content">
@@ -183,11 +184,13 @@
                     // Xóa các ký tự không hợp lệ ở đầu và cuối chuỗi JSON
                     const jsonData = JSON.parse(data.slice(data.indexOf('{'), data.lastIndexOf('}') + 1));
 
-                    // Truy xuất đường dẫn từ ô B1 (hàng 0, cột 1)
-                    const imageURL = jsonData.table.rows[0].c[1].v;
+                    // Truy xuất link hình ảnh từ ô B1 (hàng 0, cột 1)
+                    const imageURL1 = jsonData.table.rows[0].c[1].v;
+                    document.getElementById("dynamic-image").src = imageURL1;
 
-                    // Đặt đường dẫn vào thuộc tính src của hình ảnh
-                    document.getElementById("dynamic-image").src = imageURL;
+                    // Truy xuất link hình ảnh từ ô B3 (hàng 2, cột 1)
+                    const imageURL2 = jsonData.table.rows[2].c[1].v;
+                    document.getElementById("dynamic-image-2").src = imageURL2;
 
                   // Truy xuất nội dung từ ô B2 (hàng 1, cột 1)
                     const tkbDateText = jsonData.table.rows[1].c[1].v;
