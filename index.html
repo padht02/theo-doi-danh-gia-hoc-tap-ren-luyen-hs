@@ -174,7 +174,7 @@
                 const jsonData = JSON.parse(data.substring(47).slice(0, -2));
 
                 // Truy xuất đường dẫn từ ô A1 (hàng 0, cột 0)
-                const imageURL = jsonData.table.rows[0].c[0].v;
+                const imageURL = jsonData.table.rows[0].c[1].v;
                 
                 // Đặt đường dẫn vào thuộc tính src của hình ảnh
                 document.getElementById("dynamic-image").src = imageURL;
