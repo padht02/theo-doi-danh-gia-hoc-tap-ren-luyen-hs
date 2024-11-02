@@ -160,20 +160,19 @@
     </div>
     <p>Thời khóa biểu áp dụng từ ngày 04/11/2024 </p>
 <!--     <img src="https://thcsbaichay.edu.vn/wp-content/uploads/2023/10/thoi-kho-bieu-truong-trung-hoc-co-so-1.jpg" alt="Hình ảnh tkb"> -->
-    <img id="dynamic-image" alt="Hình ảnh thời khóa biểu" style="display: block; margin-top: 20px; max-width: 100%;">
+    <img id="dynamic-image" alt="Hình ảnh TKB" style="display: block; margin-top: 20px; max-width: 100%;">
   </div>
 
     <script>
         // Đường dẫn API công khai của Google Sheets
-        const sheetURL = "https://docs.google.com/spreadsheets/d/1lRi1ps4-ZaJXXR4BgCf-fSzKHprhGEIxIF8yNnHYUss/gviz/tq?tqx=out:json
-";
+        const sheetURL = "https://docs.google.com/spreadsheets/d/1lRi1ps4-ZaJXXR4BgCf-fSzKHprhGEIxIF8yNnHYUss/gviz/tq?tqx=out:json";
 
         fetch(sheetURL)
             .then(response => response.text())
             .then(data => {
                 try {
-                    // Xử lý chuỗi JSON, bỏ phần dư thừa
-                    const jsonData = JSON.parse(data.substring(47).slice(0, -2));
+                    // Xóa các ký tự không hợp lệ ở đầu và cuối chuỗi JSON
+                    const jsonData = JSON.parse(data.slice(data.indexOf('{'), data.lastIndexOf('}') + 1));
 
                     // Truy xuất đường dẫn từ ô B1 (hàng 0, cột 1)
                     const imageURL = jsonData.table.rows[0].c[1].v;
