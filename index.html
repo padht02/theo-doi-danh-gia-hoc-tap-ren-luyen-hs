@@ -163,17 +163,21 @@
     <img id="dynamic-image" alt="Hình ảnh bổ sung" style="display: block; margin-top: 20px; max-width: 100%;">
   </div>
 
-  <script>
+    <script>
         // Đường dẫn API công khai của Google Sheets
         const sheetURL = "https://docs.google.com/spreadsheets/d/2PACX-1vSRl5-5T38XYNw8Sbrhb8jtAFrwN01iK2ZRlw7RyC9YzCbelR5oeqa9IENdVYMY4myVcJAoCgh-SeWF/gviz/tq?tqx=out:json";
 
         fetch(sheetURL)
             .then(response => response.text())
             .then(data => {
-                // Chuyển đổi dữ liệu JSON
-                const jsonData = JSON.parse(data.substr(47).slice(0, -2)); // Xử lý để lấy đúng định dạng JSON
-                const imageURL = jsonData.table.rows[0].c[1].v; // Lấy link hình ảnh từ ô A1
-                document.getElementById("dynamic-image").src = imageURL; // Đặt link ảnh vào thẻ <img>
+                // Xử lý chuỗi JSON, bỏ phần dư thừa
+                const jsonData = JSON.parse(data.substring(47).slice(0, -2));
+
+                // Truy xuất đường dẫn từ ô A1 (hàng 0, cột 0)
+                const imageURL = jsonData.table.rows[0].c[0].v;
+                
+                // Đặt đường dẫn vào thuộc tính src của hình ảnh
+                document.getElementById("dynamic-image").src = imageURL;
             })
             .catch(error => console.error("Lỗi khi lấy dữ liệu từ Google Sheets:", error));
     </script>
