@@ -164,8 +164,23 @@
 <!--   <div id="ha-thoi-khoa-bieu" class="content active">
     <p>Thời khóa biểu áp dụng từ ngày 04/11/2024 </p>
     <img src="https://thcsbaichay.edu.vn/wp-content/uploads/2023/10/thoi-kho-bieu-truong-trung-hoc-co-so-1.jpg" alt="Hình ảnh tkb">
+    <img id="dynamic-image" alt="Hình ảnh bổ sung" style="display: block; margin-top: 20px; max-width: 100%;">
   </div> -->
-  
+
+  <script>
+        // Đường dẫn API công khai của Google Sheets
+        const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSRl5-5T38XYNw8Sbrhb8jtAFrwN01iK2ZRlw7RyC9YzCbelR5oeqa9IENdVYMY4myVcJAoCgh-SeWF/pubhtml";
+
+        fetch(sheetURL)
+            .then(response => response.text())
+            .then(data => {
+                // Chuyển đổi dữ liệu JSON
+                const jsonData = JSON.parse(data.substr(47).slice(0, -2)); // Xử lý để lấy đúng định dạng JSON
+                const imageURL = jsonData.table.rows[0].c[1].v; // Lấy link hình ảnh từ ô A1
+                document.getElementById("dynamic-image").src = imageURL; // Đặt link ảnh vào thẻ <img>
+            })
+            .catch(error => console.error("Lỗi khi lấy dữ liệu từ Google Sheets:", error));
+    </script>
   <!-- Nội dung Môn học với các Shape -->
   <div id="mon-hoc" class="content">
     <h2>Môn học</h2>
