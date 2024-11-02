@@ -155,14 +155,14 @@
   <div id="trang-chu" class="content active">
     <p>Chào mừng bạn đến với trang theo dõi và đánh giá học sinh cơ sở ĐHT02</p>
     <p style="font-weight: bold; font-size: 1.5em;">LỊCH HOẠT ĐỘNG THÁNG</p>
-    <p id="tkb-date" style="font-style: italic;"></p> <!-- Phần tử chứa nội dung từ ô B2 -->
+    <p id="tkb-date1" style="font-style: italic;"></p> <!-- Phần tử chứa nội dung từ ô B2 -->
     <img id="dynamic-image-2" alt="Hình ảnh trang chủ" style="display: block; margin-top: 20px; max-width: 100%;">
 <!--     <img src="https://pathwayacademy.edu.vn/wp-content/uploads/2023/07/pathway-academy-co-so-vat-chat-slide-02.jpg" alt="Hình ảnh trường học"> -->
   </div>
 
   <div id="thoi-khoa-bieu" class="content">
     <h2>Thời khóa biểu</h2>
-    <p id="tkb-date" style="font-style: italic;"></p> <!-- Phần tử chứa nội dung từ ô B2 -->
+    <p id="tkb-date2" style="font-style: italic;"></p> <!-- Phần tử chứa nội dung từ ô B2 -->
     <div class="button-container">
       <a href="https://drive.google.com/drive/folders/151TPoQCRwhkNnpLezl3Er12UUlhf8MCJ?usp=sharing" target="_blank">THỜI KHÓA BIỂU LỚP</a>
       <a href="https://drive.google.com/drive/folders/1FFRG5uoFrbbYeVA8tZbtMtOcSWPhdy8k?usp=sharing" target="_blank">THỜI KHÓA BIỂU GIÁO VIÊN</a>
@@ -194,7 +194,8 @@
 
                   // Truy xuất nội dung từ ô B2 (hàng 1, cột 1)
                     const tkbDateText = jsonData.table.rows[1].c[1].v;
-                    document.getElementById("tkb-date").textContent = tkbDateText;
+                    document.getElementById("tkb-date1").textContent = tkbDateText;
+                    document.getElementById("tkb-date2").textContent = tkbDateText;
                 } catch (error) {
                     console.error("Lỗi khi phân tích cú pháp JSON:", error);
                 }
