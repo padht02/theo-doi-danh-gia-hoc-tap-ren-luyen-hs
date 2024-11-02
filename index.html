@@ -170,14 +170,18 @@
         fetch(sheetURL)
             .then(response => response.text())
             .then(data => {
-                // Xử lý chuỗi JSON, bỏ phần dư thừa
-                const jsonData = JSON.parse(data.substring(47).slice(0, -2));
+                try {
+                    // Xử lý chuỗi JSON, bỏ phần dư thừa
+                    const jsonData = JSON.parse(data.substring(47).slice(0, -2));
 
-                // Truy xuất đường dẫn từ ô A1 (hàng 0, cột 0)
-                const imageURL = jsonData.table.rows[0].c[1].v;
-                
-                // Đặt đường dẫn vào thuộc tính src của hình ảnh
-                document.getElementById("dynamic-image").src = imageURL;
+                    // Truy xuất đường dẫn từ ô B1 (hàng 0, cột 1)
+                    const imageURL = jsonData.table.rows[0].c[1].v;
+
+                    // Đặt đường dẫn vào thuộc tính src của hình ảnh
+                    document.getElementById("dynamic-image").src = imageURL;
+                } catch (error) {
+                    console.error("Lỗi khi phân tích cú pháp JSON:", error);
+                }
             })
             .catch(error => console.error("Lỗi khi lấy dữ liệu từ Google Sheets:", error));
     </script>
